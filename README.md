@@ -12,3 +12,5 @@ For the reboiler and condenser, you'll need to run the code again after adding d
 
 Results exemple:
 ![Colonne à P moyen](https://github.com/user-attachments/assets/47fcd83d-f3ca-456c-b11f-0a79e677f892)
+
+![Txy alimentation P moyen](https://github.com/user-attachments/assets/e0690f6f-fda6-450d-8754-372a5542ad2b)
