@@ -10,7 +10,7 @@ The data can be found, for example, on the NIST website (https://webbook.nist.go
 
 For the reboiler and condenser, you'll need to run the code again after adding data for these parts.
 
-Results exemple:
+Results example:
 
 ![Colonne à P moyen](https://github.com/user-attachments/assets/47fcd83d-f3ca-456c-b11f-0a79e677f892)
 
