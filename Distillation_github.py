@@ -181,15 +181,15 @@ class distillColumn:
         self.V_upper = (1 + self.R) * self.D
         self._a = (self.y_mid - self.x_B) / (self.x_mid - self.x_B)
         self._b = (1 - self._a) * self.x_B
-        self.L_lower = self.B / (self._a - 1)
-        self.V_lower = self.L_lower - self.B
+        
+        self.V_lower = self.B / (self._a - 1)
+        self.L_lower = self.V_lower + self.B
         #
         self.R_prime_W = self.V_lower/self.B
         #
         self.n_trays = 0    # initializing the tray numbers
-        self.Rmin = 0       # initializing the reflux ratio
         # almost private methods
-        self._rmin()        # compute the minimum reflux ratio
+        self.Rmin = self._rmin()        # compute the minimum reflux ratio
         self._azeocheck()   # check if there are any azeotropes
         
     def _azeocheck(self):
@@ -318,7 +318,7 @@ class distillColumn:
     
     def q_line(self,x):
         if self.q==1:
-            qmod = 0.9999999999999999
+            qmod = 1.000000000000001
         else:
             qmod = self.q
         return (qmod / (qmod - 1)) * x - (self.x_F / (qmod - 1))
@@ -382,7 +382,7 @@ class distillColumn:
         y = alphaFun(x)
         a = trapezoid(y, x)
         self.average_alpha = a  # average volatility of the solution
-        n = np.log(self.x_D/(1 - self.x_D) * (1 - self.x_B)/self.x_B) / np.log(a)
+        n = np.log(self.x_D/(1 - self.x_D) * (1 - self.x_B)/self.x_B) / np.log(a) -1
         return n
     
     def _rmin(self):
@@ -391,13 +391,12 @@ class distillColumn:
         if self.q == 1:
             x = self.x_F
         else:
-            self.eq = lambda x: self.f(x)-self.q/(self.q-1)*x+self.x_F/(self.q-1)
+            self.eq = lambda x: self.f(x) - self.q / (self.q-1) * x + self.x_F / (self.q-1)
             x = fsolve(self.eq, self.x_F)[0]
         y = self.f(x)
         k = (y - self.x_D) / (x - self.x_D)
-        self.Rmin = k / (1 - k)
-    
-        return None
+        
+        return k / (1 - k)
     
     def L_etages(self,points):
         _ = plt.figure("McCabe-Thiele xa", figsize = (8, 8))
@@ -432,7 +431,7 @@ class distillColumn:
         # axis ticks and labels
         plt.xticks(np.linspace(0, 1, 11))
        
-        plt.xlabel("Benzène (A), Toluène (B) vapor mole-fraction")
+        plt.xlabel("Benzène vapor mole-fraction")
         plt.ylabel("Étages")
         # range of the x, y parameters; between 0 and 1
         
@@ -450,7 +449,7 @@ class Condenseur:
     def run_cond(self): 
         return -(self.col.R+1)*self.col.D*(self.HV_D-self.hl_D)*1000/3600 #passage en J/s = W
     
-    def T_sortie_caloporteur(self):  #température de sortie du fluide caloporteur °C
+    def T_sortie_caloporteur(self):  #température de sortie du fluide caloporteur
         return abs(self.Qc_cond)/(self.debit_D_caloporteur*self.Cp_D_caloporteur)+self.TE_D_caloporteur
     
     def __init__(self, col : distillColumn, hl_D_A : float,hl_D_B : float,Hv_D_A:float,Hv_D_B:float,Cp_D_cal:float,debit_cal_D:float,TE_D_cal:float):
@@ -466,6 +465,7 @@ class Condenseur:
         self.debit_D_caloporteur = debit_cal_D/3600     #de kmol/h en kmol/s
         
         self.TE_D_caloporteur = TE_D_cal                #°C
+        
         #
         self.HV_D = self.HV_D()
         self.hl_D = self.hL_D()    
@@ -513,12 +513,9 @@ class Bouilleur:
         self.Tf_caloporteur = self.T_sortie_caloporteur()
     
     def Affiche(self):
-        print(f"Qc = {self.Qc_bouil/1000000:.{decimal}f} MW")    #!!! on fait un passage en MW pour l'affichage
+        print(f"Qb = {self.Qc_bouil/1000000:.{decimal}f} MW")    #!!! on fait un passage en MW pour l'affichage
         print(f"TF_caloporteur = {self.Tf_caloporteur:.{decimal}f} °C")
         
-   
-    
-    
 
 ###############################################################################
 # Données
