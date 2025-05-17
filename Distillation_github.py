@@ -411,7 +411,7 @@ class distillColumn:
         # axis ticks and labels
         plt.xticks(np.linspace(0, 1, 11))
        
-        plt.xlabel("Benzène (A), Toluène (B) liquid mole-fraction")
+        plt.xlabel("Benzène (A), Toluène (B) fraction molaire du liquide")
         plt.ylabel("Étages")
         # range of the x, y parameters; between 0 and 1
         
@@ -431,7 +431,7 @@ class distillColumn:
         # axis ticks and labels
         plt.xticks(np.linspace(0, 1, 11))
        
-        plt.xlabel("Benzène vapor mole-fraction")
+        plt.xlabel("Benzène (A), Toluène (B) fraction molaire de la vapeur")
         plt.ylabel("Étages")
         # range of the x, y parameters; between 0 and 1
         
@@ -465,7 +465,6 @@ class Condenseur:
         self.debit_D_caloporteur = debit_cal_D/3600     #de kmol/h en kmol/s
         
         self.TE_D_caloporteur = TE_D_cal                #°C
-        
         #
         self.HV_D = self.HV_D()
         self.hl_D = self.hL_D()    
