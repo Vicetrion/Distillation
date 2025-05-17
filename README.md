@@ -18,7 +18,7 @@ Results example:
 
 ![image](https://github.com/user-attachments/assets/f045f686-daa3-4455-bf19-449985d64518)
 
-![image](https://github.com/user-attachments/assets/dd9afe71-ae6d-49a7-9e9b-4981f79ebb14)
+![image](https://github.com/user-attachments/assets/94c79882-72f0-462a-8793-fd7472c1e369)
 
 ![image](https://github.com/user-attachments/assets/ad8305ad-18e1-419c-9251-c31161bcb094)
 
