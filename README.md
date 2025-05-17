@@ -20,6 +20,6 @@ Results example:
 
 ![image](https://github.com/user-attachments/assets/dd9afe71-ae6d-49a7-9e9b-4981f79ebb14)
 
-![image](https://github.com/user-attachments/assets/62a05f02-5b90-4c55-bb04-6f105e834e40)
+![image](https://github.com/user-attachments/assets/ad8305ad-18e1-419c-9251-c31161bcb094)
 
 ![Capture d'écran 2025-05-17 180311](https://github.com/user-attachments/assets/9fc85a3b-b621-4d9c-8d54-7d407697976e)
