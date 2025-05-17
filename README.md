@@ -12,6 +12,14 @@ For the reboiler and condenser, you'll need to run the code again after adding d
 
 Results example:
 
-![Colonne à P moyen](https://github.com/user-attachments/assets/47fcd83d-f3ca-456c-b11f-0a79e677f892)
+![image](https://github.com/user-attachments/assets/50c1d374-430a-4e96-b641-20ee174adbf8)
 
-![Txy alimentation P moyen](https://github.com/user-attachments/assets/e0690f6f-fda6-450d-8754-372a5542ad2b)
+![image](https://github.com/user-attachments/assets/fd3aca5d-42f3-48fe-aa10-7420d4425f58)
+
+![image](https://github.com/user-attachments/assets/f045f686-daa3-4455-bf19-449985d64518)
+
+![image](https://github.com/user-attachments/assets/dd9afe71-ae6d-49a7-9e9b-4981f79ebb14)
+
+![image](https://github.com/user-attachments/assets/62a05f02-5b90-4c55-bb04-6f105e834e40)
+
+![Capture d'écran 2025-05-17 180311](https://github.com/user-attachments/assets/9fc85a3b-b621-4d9c-8d54-7d407697976e)
